@@ -7,7 +7,7 @@ RUN chmod -R 755 /tmp && chmod -R 755 /var
 RUN chmod a+rwx /.local
 
 # For Tensorflow Latest
-RUN python3 -m pip install --no-cache-dir --use-feature=2020-resolver -q opencv-python-headless \
+RUN python3 -m pip install --no-cache-dir -q opencv-python-headless \
     imageio \
     scikit-image \
     scikit-learn \
@@ -18,7 +18,7 @@ RUN python3 -m pip install --no-cache-dir --use-feature=2020-resolver -q opencv-
 RUN cd ~
 RUN rm -r /root/.jupyter
 COPY /.jupyter /root/.jupyter
-RUN python3 -m pip install --no-cache-dir --use-feature=2020-resolver -q install jupyterlab
+RUN python3 -m pip install --no-cache-dir -q install jupyterlab
 
 WORKDIR /tf
 EXPOSE 8888
