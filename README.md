@@ -4,5 +4,5 @@
 **Docker Instructions**
 ```
 docker pull axd465/dl_tf_env:tagname
-docker run -it --rm --gpus all -u root -p 8888:8888 axd465/dl_tf_env:tagname
+docker run -it --rm --gpus all -u root -p 8888:8888 -v ${PWD}:/tf axd465/dl_tf_env:tagname
 ```
